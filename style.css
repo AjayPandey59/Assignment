@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.bg1 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("Graphics/bg.png");
+    background-size: 100% auto;
+}
+
+.machine {
+    position: absolute;
+    right: 8%;
+    bottom: 8%;
+}
+
+.machine img {
+    width: 200px;
+    transition: 0.3s ease;
+}
+
+.machine img:nth-child(1) {
+    position: relative;
+    z-index: 1002;
+}
+
+.machine img:nth-child(2),
+.machine img:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+}
+
+.machine img:nth-child(2) {
+    left: -110px;
+    bottom: 20px;
+}
+
+.machine img:nth-child(3) {
+    bottom: 125px;
+}
+
+.handle {
+    transform: translate(0, 50px);
+}
+
+.box {
+    transform: scale(1.05, 0.95);
+}
+
+.filler {
+    transform: translate(0, 4px);
+}
+
+.balloons {
+    position: absolute;
+    right: calc(8% + 208px);
+    bottom: calc(8% + 160px);
+    transform: scale(0.3) translateY(90px);
+    transition: 0.5s ease;
+}
+
+.balloons img {
+    width: 100px;
+}
+
+.balloons img:nth-child(1) {
+    position: relative;
+}
+
+.balloons img:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    width: 50%;
+}
+
+.balloons img:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(8px, 55px);
+    opacity: 0;
+}
+
+.phase2 {
+    transform: scale(0.6) translateY(25px);
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    /* 20%{
+        transform: translate(-20vw, -14vh);
+    }
+    40%{
+        transform: translate(-40vw, -28vh);
+    }
+    60%{
+        transform: translate(-60vw, -42vh);
+    }
+    80%{
+        transform: translate(-80vw, -56vh);
+    } */
+    100% {
+        transform: translate(-100vw, -70vh);
+    }
+}
+
+.phase3 {
+    transform: scale(1) translateY(0px);
+    transition: 0.3s ease;
+    animation: float 10s ease-in-out 0.3s forwards;
+}
+
+.burst {
+    transform: scale(1.2);
+    opacity: 0;
+}
